@@ -7,10 +7,13 @@
     color: white;
     text-transform: capitalize;
 }
-body{
+body,html{
     overflow: hidden;
 }
 .phone{
+    display: none;
+}
+.naver {
     display: none;
 }
 .back_img{
@@ -36,13 +39,17 @@ header{
 
 header .nav{
     display: flex;
+    overflow: hidden;
     font-size: 1.5rem;
     /* justify-content: space-around; */
-    gap: 5rem;
+    gap: 3rem;
     align-items: center;
 }
 .nav a:hover{
     border-bottom: 5px solid blue;
+}
+.new a{
+    font-size: 1.5rem;
 }
 .line{
     height: 34rem;
@@ -68,33 +75,24 @@ header .nav{
         padding: .5rem;
         transition: 3s;
 }
-.place_name{
-    height: 2.5rem;
-    width: 12rem;
-    /* position: relative; */
-    overflow: hidden;
-    /* background-color: #900909; */
+.area{
+    display: flex;
+    padding: 6rem 0rem 0rem 0rem;
+    align-items: center;
 }
 .area_name{
     padding: 0rem 0rem 0rem 5rem;
     display: flex;
     /* gap: 2rem; */
     flex-wrap: wrap;
+    flex-direction: column;
     /* align-items: center; */
 }
-.area{
-    display: flex;
-    padding: 6rem 0rem 0rem 0rem;
-    align-items: center;
+.one{
+    overflow: hidden;
 }
-.place_name .app{
-    font-size: 2rem;
-    transition: 2s;
-    color: #bab5b5;
-    /* position: absolute; */
-    /* display: none; */
-    /* transform: scale(); */
-    font-weight: bolder;
+.info{
+    overflow: hidden;
 }
 .para_graph{
     width: 30rem;
@@ -105,6 +103,22 @@ header .nav{
     overflow: hidden;
     flex-wrap: wrap;
     flex-direction: row;
+}
+.place_name{
+    height: 2.5rem;
+    width: 12rem;
+    /* position: relative; */
+    /* overflow: hidden; */
+    /* background-color: #900909; */
+}
+.place_name h1{
+    font-size: 2rem;
+    transition: 2s;
+    color: #ffffffed;
+    /* position: absolute; */
+    /* display: none; */
+    /* transform: scale(); */
+    font-weight: bolder;
 }
 .graph{
     /* display: none; */
@@ -144,32 +158,61 @@ header .nav{
     background-color: transparent;
 }
 .fram{
-    display: flex;
-    flex-direction: column;
     overflow: hidden;
     padding: 0rem 0rem 0rem 4rem;
 }
-.imges{
-    width: 45rem;
-    position: relative;
-    height: 24rem;
-    /* background-color: #fff; */
+.carder{
+    width: 40rem;
+    height: 25rem;
+    overflow: hidden;
 }
-.imges .imagen{
-    width: 25rem;
-    /* position: relative; */
-    height: 30rem;
-    position: absolute;
+.card_container {
+    width: 50%;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    gap: 2.2rem;
+}
 
-    /* background-color: #000; */
+.card_container .card {
+    overflow: hidden;
+    width: 250px;
+    height: 320px;
+    border-radius: 0.5rem;
+    overflow: hidden;
 }
-.imagen .fram_img{
+
+.card img{
     width: 100%;
-    position: absolute;
     height: 100%;
+}
+.onemore{
+    height: 2rem;
+    display: flex;
+    width: 10rem;
+    overflow: hidden;
+}
+#topsearch{
+    position: absolute;
+    transform: translateX(-3px);
+    border: 2px solid #fff;
+    padding: .2rem .2rem;
+    transition: 1.5s;
+    border-radius: 50%;
+    z-index: 5;
 }
 #search{
     display: none;
+}
+.onemore .try{
+    height: 2rem;
+    width: 9rem;
+    background-color: #9c979772;
+    transform: translateX(-90px);
+    transition: 1s;
+    outline: none;
+    border: 2px solid #fff;
+    border-radius: 2rem;
 }
 #title{
     font-size: 2rem;
@@ -194,6 +237,12 @@ header .nav{
 }
 #left{
     transform: translateX(12rem);
+}
+#right:active{
+    background-color: #3de8e8;
+}
+#left:active{
+    background-color: #3de8e8;
 }
 @media(max-width:1444px) {
     header h1{
@@ -289,7 +338,7 @@ header .nav{
     }
     header .nav{
         gap: 3rem;
-        padding: 0rem 0rem 0rem 3rem;
+        padding: 0rem 0rem 0rem 0rem;
     }
     .area_name{
         flex-direction: column;
@@ -306,13 +355,57 @@ header .nav{
         font-size:1rem;
     } */
 }
-@media (max-width:825px){
+@media (max-width:860px){
     header .nav{
-        gap: 2rem;
-        padding: 0rem 2rem 0rem 0rem;
+        display: none;
+        /* gap: .5rem;
+        padding: 0rem 0rem 0rem 0rem; */
     }
     header h1{
         font-size: 2rem;
+    }
+    header .new{
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+    }
+    #menu{
+        display: block;
+        font-size: 2rem;
+    }
+    .naver{
+
+        display: block;
+    }
+    .box{
+        height: 21rem;
+        width: 13rem;
+        background-color: #ffffff8a;
+        position: absolute;
+        top: 1rem;
+        box-shadow: -9px 0px 30px #000;
+        border-radius: 1rem;
+        z-index: 10;
+        margin-left: -2.5rem;
+        transition: 1s;
+        /* transform: translateX(-30px); */
+        transform: translateY(-284px);
+    }
+    .naver a{
+        color: #2d2b2b;
+        display: flex;
+        font-weight: bolder;
+        align-items: center;
+        justify-content: center;
+        /* gap: 3rem; */
+        line-height: 4rem;
+    }
+    .naver #x{
+        font-size: 2rem;
+        border-radius: 50%;
+        background-color: #fff;
+        border: 2px solid #fff;
+        margin-left: 10.7rem;
     }
     header h2 {
         font-size:1.5rem;
@@ -336,6 +429,32 @@ header .nav{
     #left{
         transform: translateX(1px);
     }
+    .twomore{
+        height: 2rem;
+        display: flex;
+        width: 10rem;
+        overflow: hidden;
+    }
+    #search{
+    display: block;
+    position: absolute;
+    transform: translateX(-3px);
+    border: 2px solid #fff;
+    padding: .2rem .2rem;
+    transition: 1.5s;
+    border-radius: 50%;
+    z-index: 5;
+    }
+    .twomore .try{
+        height: 2rem;
+        width: 9rem;
+        background-color: #9c979772;
+        transform: translateX(-90px);
+        transition: 1s;
+        outline: none;
+        border: 2px solid #fff;
+        border-radius: 2rem;
+    }
     
 }
 @media (max-width:715px){
@@ -345,7 +464,7 @@ header .nav{
     header .nav{
         gap: 1rem;
         font-size: 1.2rem;
-        padding: 0rem 0rem 0rem 5rem;
+        padding: 0rem 0rem 0rem 0rem;
     }
     header h2 {
         font-size:1rem;
@@ -362,9 +481,6 @@ header .nav{
         display: none;
     }
     .new{
-        display: flex;
-    }
-    #search{
         display: flex;
     }
 }
@@ -408,11 +524,18 @@ header .nav{
         display: flex;
         gap: 2rem;
     }
-    #menu{
+    /* #menu{
         display: flex;
-    }
-    #search{
-        display: flex;
+    } */
+    .twomore .try{
+        height: 1.5rem;
+        width: 9rem;
+        background-color: #9c979772;
+        transform: translateX(-90px);
+        transition: 1s;
+        outline: none;
+        border: 1.5px solid #fff;
+        border-radius: 1rem;
     }
     #dots_phone{
         display: flex;
@@ -421,6 +544,16 @@ header .nav{
         padding: .5rem 9rem;
         flex-direction: row;
         /* transform: rotateX(20deg); */
+    }
+    .new .user{
+        display: none;
+    }
+    .naver a{
+        display: flex;
+    }
+    .box{
+        transform: translateY(-284px);
+        margin-left: -11rem;
     }
     .dots_p{
         background-color: #fff;
